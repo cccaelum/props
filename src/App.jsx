@@ -10,13 +10,16 @@ const App = () => {
     { id: 3, text: 'Hacer ejercicio', completed: false }
   ]);
 
-  const addTask = (taskText) => { // cogemos taskText desde AddTaskForm 
+  const [maxId, setMaxId] = useState(tasks.length + 1)
+
+  const addTask = (taskText) => { 
     const newTask = {
-      id: tasks.length + 1, 
+      id: maxId + 1, 
       text: taskText,
       completed: false
     };
     setTasks([...tasks, newTask]); // Añadimos la nueva tarea manteniendo las anteriores
+    setMaxId(newTask.id) 
   };
 
   const deleteTask = (taskId) => {

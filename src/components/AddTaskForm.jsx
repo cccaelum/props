@@ -5,7 +5,7 @@ function AddTaskForm({ addTask }) { //prop: pasamos la funcion para agregar tare
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (taskText) {  
+        if (taskText.trim()) {  
           addTask(taskText);
           setTaskText('');
         }

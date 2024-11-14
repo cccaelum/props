@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import AddTaskForm from './components/AddTaskForm';
 import Task from './components/Task';
+import Template from './templates/Template';
 import './App.css'
 
 const App = () => {
@@ -34,8 +35,9 @@ const App = () => {
 
   return (
     <>
+    <Template>
     <h1>Lista de Tareas</h1>
-    <AddTaskForm  addTask={addTask} /> 
+    <AddTaskForm  addTask={addTask} color={"#FFFFCC"}/> 
     <ul>
     {tasks.map(task => (
           <Task //a continuacion pasamos los props al componente Task
@@ -45,9 +47,11 @@ const App = () => {
             completed={task.completed}
             deleteTask={deleteTask}
             completeTask={completeTask}
+            color={"#E5FFCC"}
           />
         ))}
     </ul>
+    </Template>
     </>
   );
 };

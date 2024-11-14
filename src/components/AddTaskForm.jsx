@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-function AddTaskForm({ addTask }) { //prop: pasamos la funcion para agregar tarea desde App
+function AddTaskForm({ addTask, color }) { //prop: pasamos la funcion para agregar tarea desde App
     const [taskText, setTaskText] = useState('');
 
     const handleSubmit = (e) => {
@@ -13,7 +13,7 @@ function AddTaskForm({ addTask }) { //prop: pasamos la funcion para agregar tare
     
       return (
         <form onSubmit={handleSubmit}>
-          <input
+          <input style={{backgroundColor: color}}
             type="text"
             placeholder="Agregar nueva tarea"
             value={taskText}
